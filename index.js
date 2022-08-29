@@ -12,7 +12,7 @@ app.use(
   morgan(":method :url :status :res[content-length] - :response-time ms :data")
 );
 
-morgan.token("data", (req, res) => {
+morgan.token("data", (req) => {
   return req.method === "POST" ? JSON.stringify(req.body) : " ";
 });
 
